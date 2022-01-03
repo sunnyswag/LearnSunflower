@@ -4,6 +4,7 @@ buildscript {
     ext {
         navigationVersion = '2.3.5'
         gradleVersion = '4.2.2'
+        roomVersion = '2.4.0'
     }
 
     ext.kotlin_version = "1.5.31"
