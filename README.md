@@ -5,7 +5,11 @@
 
 ### Java 相关
 
-* @Injection
+* **[依赖注入和 @Injection 注解](https://www.vogella.com/tutorials/DependencyInjection/article.html) **
+
+  以依赖的方式(传参)来使用其他对象，而不是使用的时候直接 new 出来，方便测试和维护
+
+  如果用到了 @Injection 注解，则由 Java 通过反射将对象 new 出来
 
 ### Kotlin 相关
 
@@ -25,11 +29,11 @@
 
 * **Android 动画**
 
-  1. 动画资源的位置：`res/anim/*filename*.xml`
+  * 动画资源的位置：`res/anim/*filename*.xml`
 
-     动画 `<translate>` 标签的 [作用](https://developer.android.com/guide/topics/resources/animation-resource#View) ：用来表示一次动画在位置上的转换，fromXDelta 表示开始时的 x 坐标，toXDelta 表示结束时的 x 坐标。可以使用百分比表示，如 x 轴上的 -100% 表示窗口完全不显示且在左边进行隐藏，0% 表示正常显示，100% 表示窗口隐藏在右边。
+    动画 `<translate>` 标签的 [作用](https://developer.android.com/guide/topics/resources/animation-resource#View) ：用来表示一次动画在位置上的转换，fromXDelta 表示开始时的 x 坐标，toXDelta 表示结束时的 x 坐标。可以使用百分比表示，如 x 轴上的 -100% 表示窗口完全不显示且在左边进行隐藏，0% 表示正常显示，100% 表示窗口隐藏在右边。
 
-  2. res/animator 下的动画
+  * res/animator 下的动画
 
 * **Activity 和 Fragment 的区别和联系**
 
@@ -38,9 +42,15 @@
   1. Fragment 包含在 Activity 中，并且 Fragment 可以复用，Activity 不可以复用，Fragment 可以作为一个界面的最小单位
   2. Fragment 和 Activity 具有不同的生命周期
 
-* **Demo 中的 fragment 用到的组件分别有什么用？**
+* **Demo 中的 xml 用到的组件分别有什么作用？**
+  * androidx.coordinatorlayout.widget.CoordinatorLayout
+  * com.google.android.material.appbar.AppBarLayout
 
 * **/values 下各个文件的作用**
+* **Res/layout/.xml 下的文件标签分别有什么作用**
+  * xmlns:android="http://schemas.android.com/apk/res/android"
+  * xmlns:tools="http://schemas.android.com/tools"
+  * xmlns:app="http://schemas.android.com/apk/res-auto"
 
 ### Android 架构
 
