@@ -5,7 +5,7 @@
 
 ### Java 相关
 
-* **[依赖注入和 @Injection 注解](https://www.vogella.com/tutorials/DependencyInjection/article.html) **
+* **[依赖注入和 @Injection 注解](https://www.vogella.com/tutorials/DependencyInjection/article.html)**
 
   以依赖的方式(传参)来使用其他对象，而不是使用的时候直接 new 出来，方便测试和维护
 
