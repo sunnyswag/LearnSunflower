@@ -20,7 +20,7 @@ data class Plant(
      * 否则，返回 false
      */
     fun shouldBeWatered(curDate: Calendar, lastWateringDate: Calendar) =
-        //TODO 为什么这里需要使用 .apply，不可以直接 .add 吗
+        // .apply{ lambda } 直接返回的是运算后的 lastWateringDate 对象, add() 是 void 方法
         curDate > lastWateringDate.apply { add(DAY_OF_YEAR, wateringInterval) }
 
     override fun toString(): String = name

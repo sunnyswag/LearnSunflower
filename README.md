@@ -13,6 +13,16 @@
 
 ### Kotlin 相关
 
+* **Kotlin 关键字**
+
+  apply：`xxx`.apply{ lambda } 直接返回的是运算后的对象，即返回的是 `xxx`
+
+  let：无返回值的代码块操作
+
+  with && run：最后一行作为返回值的代码块操作
+
+  also：感觉和 apply 很像，咱未发现区别
+
 ### MVVM 相关
 
 ### Android 基础
@@ -68,7 +78,7 @@
 
   ```groovy
   android {
-  	buildFeatures {
+      buildFeatures {
           dataBinding true
           viewBinding true
       }
