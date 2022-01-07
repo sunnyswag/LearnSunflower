@@ -55,12 +55,29 @@
 * **Demo 中的 xml 用到的组件分别有什么作用？**
   * androidx.coordinatorlayout.widget.CoordinatorLayout
   * com.google.android.material.appbar.AppBarLayout
+  * androidx.core.widget.NestedScrollView
+  * com.google.android.material.appbar.CollapsingToolbarLayout
+  * androidx.viewpager2.widget.ViewPager2
+  * com.google.android.material.appbar.MaterialToolbar
+  * com.google.android.material.tabs.TabLayout
 
 * **/values 下各个文件的作用**
+  * menu
+  * animator
+  * anim
+  * navigation
+  * values/anim.xml
+  * values/dimens.xml
+  * values/colors.xml
 * **Res/layout/.xml 下的文件标签分别有什么作用**
   * xmlns:android="http://schemas.android.com/apk/res/android"
+    * android:fitsSystemWindows
+    * android:layout_marginStart
+    * android:layout_marginEnd
   * xmlns:tools="http://schemas.android.com/tools"
   * xmlns:app="http://schemas.android.com/apk/res-auto"
+  * 
+* **Android 如何使用 xml 画图标**
 
 ### Android 架构
 
