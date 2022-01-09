@@ -52,8 +52,8 @@
                     android:contentDescription="@string/plant_detail_image_content_description"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    app:imageFromUrl="@{viewModel.plant.imageUrl}"
                     app:layout_collapseMode="parallax" />
+<!--                    app:imageFromUrl="@{viewModel.plant.imageUrl}"-->
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar"
@@ -100,6 +100,23 @@
                     tools:text="Apple" />
 
                 <TextView
+                    android:id="@+id/plant_watering_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:gravity="center_horizontal"
+                    android:text="@string/watering_needs_prefix"
+                    android:textColor="?attr/colorAccent"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/plant_detail_name" />
+<!--                    app:wateringText="@{viewModel.plant.wateringInterval}" />-->
+
+                <TextView
+                    android:id="@+id/plant_watering"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
@@ -107,13 +124,60 @@
                     android:gravity="center_horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/plant_detail_name"
-                    app:wateringText="@{viewModel.plant.wateringInterval}"
+                    app:layout_constraintTop_toBottomOf="@id/plant_watering_header"
                     tools:text="every 7 days" />
+<!--                app:wateringText="@{viewModel.plant.wateringInterval}"-->
 
+
+                <ImageView
+                    android:id="@+id/gallery_nav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:clickable="true"
+                    android:contentDescription="@string/gallery_content_description"
+                    android:focusable="true"
+                    android:src="@drawable/ic_photo_library"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/plant_detail_name" />
+<!--                app:isGone="@{!viewModel.hasValidUnsplashKey()}"-->
+
+
+                <TextView
+                    android:id="@+id/plant_description"
+                    style="?android:attr/textAppearanceMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:textIsSelectable="true"
+                    android:minHeight="@dimen/plant_description_min_height"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plant_watering"
+                    tools:text="Details about the plant" />
+<!--                app:renderHtml="@{viewModel.plant.description}"-->
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> callback.add(viewModel.plant)}"
+            android:tint="@android:color/white"
+            app:shapeAppearance="@style/ShapeAppearance.Sunflower.FAB"
+            app:layout_anchor="@id/appbar"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/ic_plus" />
+<!--        app:isFabGone="@{viewModel.isPlanted}"-->
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -1,4 +1,4 @@
-package com.example.sunflower.data
+package com.example.sunflower.data.domain
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

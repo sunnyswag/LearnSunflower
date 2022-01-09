@@ -5,6 +5,9 @@ buildscript {
         navigationVersion = '2.3.5'
         gradleVersion = '4.2.2'
         roomVersion = '2.4.0'
+
+        hiltVersion = '2.38.1'
+        lifecycleVersion = '2.4.0'
     }
 
     ext.kotlin_version = "1.5.31"
@@ -13,9 +16,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "com.android.tools.build:gradle:${gradleVersion}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -26,7 +30,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 
