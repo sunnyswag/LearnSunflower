@@ -23,7 +23,26 @@
 
   also：感觉和 apply 很像，咱未发现区别
 
+  [companion object](https://blog.mindorks.com/companion-object-in-kotlin)：用来调用 static 方法
+  
+  [suspend fun](https://stackoverflow.com/questions/47871868/what-does-the-suspend-function-mean-in-a-kotlin-coroutine)：协程相关，新起线程，可以用来处理同步和异步操作，如：同步新线程的操作
+  
+  launch：协程相关，用来新起一个线程
+
+* **Kotlin 符号**
+
+  !! 自己可以确幸不会为 null，如果为 null 的话为抛 NPE
+  ?  加在变量声明后面，表示可以接受 null 的赋值
+
+  .? 如果不为 null 的话执行接下来的操作
+
+  ?: 如果左边的为 null，则返回右边的
+
 ### MVVM 相关
+
+* **常用组件**
+  * @HiltViewModel
+    * 如果不使用这个标签会怎样
 
 ### Android 基础
 
@@ -61,23 +80,48 @@
   * com.google.android.material.appbar.MaterialToolbar
   * com.google.android.material.tabs.TabLayout
 
-* **/values 下各个文件的作用**
-  * menu
-  * animator
-  * anim
-  * navigation
-  * values/anim.xml
-  * values/dimens.xml
-  * values/colors.xml
+* **/res 下各个文件的作用**
+  
+  * menu：存放右上角的菜单栏文件
+  * anim：动画资源，仅对 view 对象使用
+  * animator：动画资源，可以对所有的对象使用
+  * navigation：导航栏
+  * values/anim.xml：存放 anim 的值
+  * values/dimens.xml：保存尺寸资源
+  * values/colors.xml：保存图片资源
+  
 * **Res/layout/.xml 下的文件标签分别有什么作用**
   * xmlns:android="http://schemas.android.com/apk/res/android"
+    * 用于 Android 系统定义的一些属性
     * android:fitsSystemWindows
-    * android:layout_marginStart
+    * android:layout_marginStarts
     * android:layout_marginEnd
+    * android:onClick
   * xmlns:tools="http://schemas.android.com/tools"
+    * 为IDE提供相关信息，打包时会将这部分信息过滤
   * xmlns:app="http://schemas.android.com/apk/res-auto"
-  * 
+    * 应用自定义的一些属性
+  
 * **Android 如何使用 xml 画图标**
+
+* **Gradle 相关**
+
+  * 在代码中使用 BuildConfig.UNSPLASH_ACCESS_KEY
+
+    需要在 build.gradle(:app) 中进行如下配置：
+
+    ```groovy
+    android {
+        defaultConfig {
+            buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"" + getUnsplashAccess() + "\"")
+        }
+    }
+    
+    def getUnsplashAccess() {
+        return project.findProperty("unsplash_access_key")
+    }
+    ```
+
 
 ### Android 架构
 
@@ -89,7 +133,7 @@
 
   Navigation 需要使用 FragmentContainerView 来承载，再在 `<navigation>` 里面定义一个又一个的 `<fragment>` 来实现跳转逻辑
 
-* **DataBinding**
+* **DataBinding** [link](https://github.com/leavesC/DataBindingSamples)
 
   实现 layout 和 代码的数据绑定，使用时，在 build.gradle(:app) 中添加：
 
@@ -102,11 +146,30 @@
   }
   ```
 
-  在 xml 中使用 `<layout>` 作为根节点，其中可以加入` <data>` 标签来操作数据
+  1. 实现 xml 和 Activity/Fragment 之间的控件绑定，使用 DataBinding 之后，就不用 findViewById 了
 
-  `<data>` 标签中的 `<import>` 标签可以用来导包，供` <variable>` 标签使用
+  2. 实现 xml 和 ViewModel 的数据绑定
 
-  `<variable>` 定义的变量可以直接在相应的 fragment 和当前的 xml 下访问到
+     在 xml 中使用 `<layout>` 作为根节点，其中可以加入` <data>` 标签来操作数据
+  
+     使用 `@{viewModel.data}` 可以直接使用 `ViewModel` 中的数据
+  
+     `<data>` 标签中的 `<import>` 标签可以用来导包，供` <variable>` 标签使用
+  
+  3. 实现数据更新的方式 ObservableField 和 LiveData，使数据在 viewModel 层就进行更新了
+  4. 将数据和控件的操作分离，这十分关键
+  5. 如何在不获取 view 的情况下，在 viewModel 层更新数据呢？
+
+* **LiveData**
+
+  是和生命周期共存亡的数据，不会有内存泄漏的风险
+
+### Android 依赖
+
+* **com.google.dagger**
+  * 可以更好的处理依赖，如此理解，使用 dagger 的对象，都是通过反射创建出来的
+* **androidx.room**
+  * 官方的 ORM 框架，暂时没有什么好研究的
 
 ## REFERENCE
 

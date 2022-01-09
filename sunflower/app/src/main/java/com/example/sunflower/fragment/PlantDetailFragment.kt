@@ -1,7 +1,7 @@
 package com.example.sunflower.fragment
 
 import androidx.fragment.app.Fragment
-import com.example.sunflower.data.Plant
+import com.example.sunflower.data.domain.Plant
 
 class PlantDetailFragment : Fragment() {
 
