@@ -28,6 +28,8 @@
   [suspend fun](https://stackoverflow.com/questions/47871868/what-does-the-suspend-function-mean-in-a-kotlin-coroutine)：协程相关，新起线程，可以用来处理同步和异步操作，如：同步新线程的操作
   
   launch：协程相关，用来新起一个线程
+  
+  [init](https://stackoverflow.com/questions/55356837/what-is-the-difference-between-init-block-and-constructor-in-kotlin)：会在构造函数之前执行
 
 * **Kotlin 符号**
 
@@ -37,6 +39,11 @@
   .? 如果不为 null 的话执行接下来的操作
 
   ?: 如果左边的为 null，则返回右边的
+
+* **Kotlin 专有库**
+  * MutableStateFlow 可变状态流
+    * collect 函数，对数据流截取之后进行操作
+    * 和 LiveData 的关系 ？
 
 ### MVVM 相关
 
@@ -104,6 +111,9 @@
   
 * **Android 如何使用 xml 画图标**
 
+  * vector 和 path
+  * 
+
 * **Gradle 相关**
 
   * 在代码中使用 BuildConfig.UNSPLASH_ACCESS_KEY
@@ -170,6 +180,9 @@
   * 可以更好的处理依赖，如此理解，使用 dagger 的对象，都是通过反射创建出来的
 * **androidx.room**
   * 官方的 ORM 框架，暂时没有什么好研究的
+* **androidx.lifecycle**
+  * ViewModel 中的 SavedStateHandle 
+    * 可以用来存储 ViewModel 中的数据，以键值对的方式进行存储，可以进行持久化
 
 ## REFERENCE
 
