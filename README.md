@@ -133,6 +133,10 @@
     ```
 
 
+* **ViewPager 的切换**
+  1. 定义一个 Adapter 用来管理需要展示和切换的界面如 `SunflowerPagerAdapter` 
+  2. 再在主界面中定义切换的 tab 和 viewPager 之间的关联等如 `HomeViewPagerFragment`
+
 ### Android 架构
 
 * **Navigation**
