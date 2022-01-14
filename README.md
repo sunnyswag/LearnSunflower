@@ -99,14 +99,33 @@
   
 * **Res/layout/.xml 下的文件标签分别有什么作用**
   * xmlns:android="http://schemas.android.com/apk/res/android"
+    
     * 用于 Android 系统定义的一些属性
+    
     * android:fitsSystemWindows
+    
     * android:layout_marginStarts
+    
     * android:layout_marginEnd
+    
     * android:onClick
+    
+    * declare-styleable 标签的作用
+    
+      /Users/huiqinhuang2/Library/Android/sdk/platforms/android-29/data/res/values/attrs.xml:6943 
+    
   * xmlns:tools="http://schemas.android.com/tools"
+  
     * 为IDE提供相关信息，打包时会将这部分信息过滤
+  
   * xmlns:app="http://schemas.android.com/apk/res-auto"
+  
+    * 
+  
+    * ```
+      layoutManager
+      ```
+  
     * 应用自定义的一些属性
   
 * **Android 如何使用 xml 画图标**
