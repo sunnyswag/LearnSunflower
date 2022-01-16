@@ -14,7 +14,7 @@ class SunflowerPagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) 
 
     private val tabFragmentCreators: Map<Int, () -> Fragment> = mapOf(
         MY_GARDEN_PAGE_INDEX to { GardenFragment() },
-        PLANT_LIST_PAGE_INDEX to { PlantListFragment()}
+        PLANT_LIST_PAGE_INDEX to { PlantListFragment() }
     )
 
     override fun getItemCount(): Int = tabFragmentCreators.size
@@ -22,6 +22,5 @@ class SunflowerPagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) 
     override fun createFragment(position: Int): Fragment {
         return tabFragmentCreators[position]?.invoke() ?: throw IndexOutOfBoundsException()
     }
-
 
 }

@@ -1,4 +1,4 @@
-package com.example.sunflower.fragment
+package com.example.sunflower.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

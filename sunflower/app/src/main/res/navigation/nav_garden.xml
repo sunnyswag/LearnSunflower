@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/view_pager_fragment"
-        android:name="com.example.sunflower.fragment.HomeViewPagerFragment"
+        android:name="com.example.sunflower.fragments.HomeViewPagerFragment"
         tools:layout="@layout/fragment_view_pager">
 
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/plant_detail_fragment"
-        android:name="com.example.sunflower.fragment.PlantDetailFragment"
+        android:name="com.example.sunflower.fragments.PlantDetailFragment"
         android:label="@string/plant_details_title"
         tools:layout="@layout/fragment_plant_detail">
 
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/gallery_fragment"
-        android:name="com.example.sunflower.fragment.GalleryFragment"
+        android:name="com.example.sunflower.fragments.GalleryFragment"
         android:label="@string/plant_details_title"
         tools:layout="@layout/fragment_gallery">
         <argument

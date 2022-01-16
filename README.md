@@ -28,8 +28,6 @@
   [suspend fun](https://stackoverflow.com/questions/47871868/what-does-the-suspend-function-mean-in-a-kotlin-coroutine)：协程相关，新起线程，可以用来处理同步和异步操作，如：同步新线程的操作
   
   launch：协程相关，用来新起一个线程
-  
-  [init](https://stackoverflow.com/questions/55356837/what-is-the-difference-between-init-block-and-constructor-in-kotlin)：会在构造函数之前执行
 
 * **Kotlin 符号**
 
@@ -39,11 +37,6 @@
   .? 如果不为 null 的话执行接下来的操作
 
   ?: 如果左边的为 null，则返回右边的
-
-* **Kotlin 专有库**
-  * MutableStateFlow 可变状态流
-    * collect 函数，对数据流截取之后进行操作
-    * 和 LiveData 的关系 ？
 
 ### MVVM 相关
 
@@ -99,39 +92,21 @@
   
 * **Res/layout/.xml 下的文件标签分别有什么作用**
   * xmlns:android="http://schemas.android.com/apk/res/android"
-    
     * 用于 Android 系统定义的一些属性
-    
     * android:fitsSystemWindows
-    
     * android:layout_marginStarts
-    
     * android:layout_marginEnd
-    
     * android:onClick
-    
-    * declare-styleable 标签的作用
-    
-      /Users/huiqinhuang2/Library/Android/sdk/platforms/android-29/data/res/values/attrs.xml:6943 
-    
+    * android:layout_marginStart
+    * android:layout_marginLeft
   * xmlns:tools="http://schemas.android.com/tools"
-  
     * 为IDE提供相关信息，打包时会将这部分信息过滤
-  
   * xmlns:app="http://schemas.android.com/apk/res-auto"
-  
-    * 
-  
-    * ```
-      layoutManager
-      ```
-  
     * 应用自定义的一些属性
   
 * **Android 如何使用 xml 画图标**
 
-  * vector 和 path
-  * 
+  * pathData 是如何得出的
 
 * **Gradle 相关**
 
@@ -151,10 +126,17 @@
     }
     ```
 
+* **Adapter 相关**
 
-* **ViewPager 的切换**
-  1. 定义一个 Adapter 用来管理需要展示和切换的界面如 `SunflowerPagerAdapter` 
-  2. 再在主界面中定义切换的 tab 和 viewPager 之间的关联等如 `HomeViewPagerFragment`
+  * 总的来说 Adapter 是用来处理整体和部分之间关系的类，外部直接调用 Adapter 即可，不用管里面的处理逻辑，即可实现数据的展示和其他操作
+
+  * viewpager2 的 FragmentStateAdapter
+
+    当前使用的 Pager 的 Adapter
+
+  * RecyclerView 的 ListAdapter
+
+    一般来说，会有一个 xml 与之对应。并在内部实现 RecyclerView.ViewHolder，同时，在一些生命周期函数中处理 create 和 bind 的逻辑
 
 ### Android 架构
 
@@ -179,23 +161,26 @@
   }
   ```
 
-  1. 实现 xml 和 Activity/Fragment 之间的控件绑定，使用 DataBinding 之后，就不用 findViewById 了
-
-  2. 实现 xml 和 ViewModel 的数据绑定
-
-     在 xml 中使用 `<layout>` 作为根节点，其中可以加入` <data>` 标签来操作数据
-  
-     使用 `@{viewModel.data}` 可以直接使用 `ViewModel` 中的数据
-  
-     `<data>` 标签中的 `<import>` 标签可以用来导包，供` <variable>` 标签使用
-  
-  3. 实现数据更新的方式 ObservableField 和 LiveData，使数据在 viewModel 层就进行更新了
+  1. 实现 xml 和 Activity/Fragment 之间的控件和数据的绑定，使用 DataBinding 之后，就不用 findViewById 了
+  3. 实现数据更新的方式 ObservableField 和 LiveData，使数据在 viewModel 层更新之后可以同步到 view 层
   4. 将数据和控件的操作分离，这十分关键
   5. 如何在不获取 view 的情况下，在 viewModel 层更新数据呢？
-
+  
 * **LiveData**
 
   是和生命周期共存亡的数据，不会有内存泄漏的风险
+
+* **对 MVVM 的理解**
+
+  * 整体架构
+
+    有三个很重要的组件：Fragment/Activity、Xml、ViewModel
+
+    Fragment/Activity：是整个架构的核心，连接 Xml 和 ViewModel，通过 databinding 连接 Xml，通过 observe 连接 ViewModel
+
+    Xml：可以存在两种数据类型，一种以控件 ID 为基础，另外一种以某个类的数据类型为基础
+
+    ViewModel：继承了 ViewModel() ，且里面的数据定义成 livedata 之后，数据也就有了生命周期，方便销毁和管理
 
 ### Android 依赖
 
@@ -203,9 +188,10 @@
   * 可以更好的处理依赖，如此理解，使用 dagger 的对象，都是通过反射创建出来的
 * **androidx.room**
   * 官方的 ORM 框架，暂时没有什么好研究的
-* **androidx.lifecycle**
-  * ViewModel 中的 SavedStateHandle 
-    * 可以用来存储 ViewModel 中的数据，以键值对的方式进行存储，可以进行持久化
+
+### 其他
+
+ Github 展示的 commit 记录是根据 username 和 email 来计算的，需要手动修改一下历史 commit 的信息，并把当前仓库的 username 和 email 修改一下 [tutorial](https://stackoverflow.com/questions/750172/how-to-change-the-author-and-committer-name-and-e-mail-of-multiple-commits-in-gi)
 
 ## REFERENCE
 

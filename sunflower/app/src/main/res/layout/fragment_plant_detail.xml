@@ -6,7 +6,7 @@
     
     <data>
         <import type="com.example.sunflower.viewmodels.PlantDetailViewModel" />
-        <import type="com.example.sunflower.fragment.PlantDetailFragment.Callback" />
+        <import type="com.example.sunflower.fragments.PlantDetailFragment.Callback" />
         <variable
             name="viewModel"
             type="PlantDetailViewModel" />
