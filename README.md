@@ -81,7 +81,7 @@
   * com.google.android.material.tabs.TabLayout
 
 * **/res 下各个文件的作用**
-  
+
   * menu：存放右上角的菜单栏文件
   * anim：动画资源，仅对 view 对象使用
   * animator：动画资源，可以对所有的对象使用
@@ -89,7 +89,7 @@
   * values/anim.xml：存放 anim 的值
   * values/dimens.xml：保存尺寸资源
   * values/colors.xml：保存图片资源
-  
+
 * **Res/layout/.xml 下的文件标签分别有什么作用**
   * xmlns:android="http://schemas.android.com/apk/res/android"
     * 用于 Android 系统定义的一些属性
@@ -102,8 +102,13 @@
   * xmlns:tools="http://schemas.android.com/tools"
     * 为IDE提供相关信息，打包时会将这部分信息过滤
   * xmlns:app="http://schemas.android.com/apk/res-auto"
+    * app:spanCount
+    * app:layoutManager
+    * 
     * 应用自定义的一些属性
-  
+
+* **什么情况下使用 FrameLayout、ConstraintLayout 和 RelativeLayout**
+
 * **Android 如何使用 xml 画图标**
 
   * pathData 是如何得出的
