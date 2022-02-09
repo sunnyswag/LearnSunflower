@@ -72,14 +72,15 @@
   2. Fragment 和 Activity 具有不同的生命周期
 
 * **Demo 中的 xml 用到的组件分别有什么作用？**
-  * androidx.coordinatorlayout.widget.CoordinatorLayout
+  * androidx.coordinatorlayout.widget.CoordinatorLayout (fragment_view_pager.xml)：
+    * 暂时只能浅显的理解其用途：作为根布局或者承载交互比较多的 View
   * com.google.android.material.appbar.AppBarLayout
   * androidx.core.widget.NestedScrollView
   * com.google.android.material.appbar.CollapsingToolbarLayout
   * androidx.viewpager2.widget.ViewPager2
   * com.google.android.material.appbar.MaterialToolbar
   * com.google.android.material.tabs.TabLayout
-
+  
 * **/res 下各个文件的作用**
 
   * menu：存放右上角的菜单栏文件
