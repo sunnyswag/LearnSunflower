@@ -197,7 +197,8 @@
 
 ### 其他
 
- Github 展示的 commit 记录是根据 username 和 email 来计算的，需要手动修改一下历史 commit 的信息，并把当前仓库的 username 和 email 修改一下 [tutorial](https://stackoverflow.com/questions/750172/how-to-change-the-author-and-committer-name-and-e-mail-of-multiple-commits-in-gi)
+* Github 展示的 commit 记录是根据 username 和 email 来计算的，需要手动修改一下历史 commit 的信息，并把当前仓库的 username 和 email 修改一下 [tutorial](https://stackoverflow.com/questions/750172/how-to-change-the-author-and-committer-name-and-e-mail-of-multiple-commits-in-gi)
+* [Sunflower 架构图](https://docs.qq.com/flowchart/DYURTSFBLWlhuUU9E)
 
 ## REFERENCE
 
