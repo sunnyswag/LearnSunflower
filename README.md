@@ -95,11 +95,16 @@
   * xmlns:android="http://schemas.android.com/apk/res/android"
     * 用于 Android 系统定义的一些属性
     * android:fitsSystemWindows
-    * android:layout_marginStarts
-    * android:layout_marginEnd
+    * Margin 布局：
+      * margin 在 Layout 的外部，Start 和 End 的出现是因为可能存在一种从右到左的排布，从左到右的排布中，Start、End 分别和 Left、End 表现一致
+      * android:layout_marginStart：布局开始位置的 margin
+      * android:layout_marginEnd：布局结束位置的 margin
+      * android:layout_marginLeft：布局左边的 margin
+      * android:layout_marginRight：布局右边的 margin
+      * android:layout_marginTop：布局顶部的 margin
+      * android:layout_marginBottom：布局底部的 margin
+    * 
     * android:onClick
-    * android:layout_marginStart
-    * android:layout_marginLeft
   * xmlns:tools="http://schemas.android.com/tools"
     * 为IDE提供相关信息，打包时会将这部分信息过滤
   * xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -107,7 +112,7 @@
     * app:layoutManager
     * 
     * 应用自定义的一些属性
-
+  
 * **什么情况下使用 FrameLayout、ConstraintLayout 和 RelativeLayout**
 
 * **Android 如何使用 xml 画图标**

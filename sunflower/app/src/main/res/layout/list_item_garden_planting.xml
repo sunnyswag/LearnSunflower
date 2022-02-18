@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="plantAndGardenPlantings"
+            type="com.example.sunflower.data.domain.PlantAndGardenPlantings" />
+    </data>
+
+    <com.example.sunflower.views.MaskedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}"
+        android:layout_marginStart="@dimen/card_side_margin"
+        android:layout_marginEnd="@dimen/card_side_margin"
+        android:layout_marginBottom="@dimen/card_bottom_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/a11y_plant_item_image"
+                android:src="plantAndGardenPlantings"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{plantAndGardenPlantings.plant.imageUrl}" />
+
+
+
+        </LinearLayout>
+
+    </com.example.sunflower.views.MaskedCardView>
 
 </layout>

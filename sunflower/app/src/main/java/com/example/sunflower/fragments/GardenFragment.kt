@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.sunflower.databinding.FragmentGardenBinding
 import com.example.sunflower.viewmodels.GardenPlantingListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,7 +20,9 @@ class GardenFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val binding = FragmentGardenBinding.inflate(inflater, container, false)
+        binding.hasPlantings  = true
+        return binding.root
     }
 
 }
